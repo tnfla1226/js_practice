@@ -21,7 +21,28 @@
 4 x 9 = 36
 */
 
+
+
+var num1 = Math.floor(Math.random() * 7) + 2;
+var num2 = 1;
+
 console.log('====================');
 console.log(`랜덤 구구단 ${num1}단`);
 console.log('====================');
 
+ while (num2 <= 9) {
+        console.log(`${num1} X ${num2} = ${num1 * num2}`);
+        num2++;
+ }
+
+
+
+var num3 = Math.floor(Math.random() * 7) + 2;
+
+console.log('====================');
+console.log(`랜덤 구구단 ${num3}단`);
+console.log('====================');
+
+for (num4 = 1; num4 <= 9; num4++) {
+        console.log(`${num3} X ${num4} = ${num3 * num4}`);
+}
