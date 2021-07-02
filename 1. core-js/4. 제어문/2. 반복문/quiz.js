@@ -22,7 +22,6 @@
 */
 
 
-
 var num1 = Math.floor(Math.random() * 7) + 2;
 var num2 = 1;
 
