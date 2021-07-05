@@ -21,8 +21,28 @@
 4 x 9 = 36
 */
 
+//브라우저
+//출력할 문자
+var printText = '';
 
-var num1 = Math.floor(Math.random() * 7) + 2;
+var num1 = Math.floor(Math.random() * 8) + 2;
+var num2 = 1;
+
+printText += '============================\n';
+printText += `랜덤 구구단 ${num1}단\n`;
+printText += '============================\n';
+
+ while (num2 <= 9) {
+        printText += `${num1} X ${num2} = ${num1 * num2}\n`;
+        num2++;
+ }
+ 
+ alert(printText);
+
+
+
+
+var num1 = Math.floor(Math.random() * 8) + 2;
 var num2 = 1;
 
 console.log('====================');
@@ -36,7 +56,8 @@ console.log('====================');
 
 
 
-var num3 = Math.floor(Math.random() * 7) + 2;
+var num3 = Math.floor(Math.random() * 8) + 2;
+var num4;
 
 console.log('====================');
 console.log(`랜덤 구구단 ${num3}단`);
