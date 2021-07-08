@@ -9,7 +9,16 @@ Q. n의 약수의 개수를 구하기
 */
 
 
-function calcDivisor
+function calcDivisor(number) {
+  var divisor = [];
+  for (var n = 0; n <= number; n++) {
+    if (number % n === 0) {
+      divisor.push(n);
+    }
+  }
+  console.log(`${number}의 약수: [${divisor}]`);
+  return divisor.length
+}
 
 var divCount = calcDivisor(24);
 console.log(`약수의 개수: ${divCount}개`);

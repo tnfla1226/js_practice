@@ -17,11 +17,11 @@ var m = '100', n = '5.11';
 var result2 = (+m) + (+n);
 console.log(`result2: ${result2}`);
 
-// 명사족 논리 변환
+// 명시적 논리 변환
 console.log('===============================');
 
 var ex1 = Boolean(undefined);
-console.log(`ex: ${ex1}`);
+console.log(`ex1: ${ex1}`);
 
 var ex2 = !!'메롱';
-console.log(`ex: ${ex2}`);
+console.log(`ex2: ${ex2}`);

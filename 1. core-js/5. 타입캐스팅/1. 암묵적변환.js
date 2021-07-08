@@ -10,5 +10,5 @@ var logical = true + '';
 console.log(typeof logical);
 
 // 더하기가 아닌 다른 연산에서 숫자 뒤에 문자가 올경우 변수는 숫자형이 됨
-var x = 100 - '30';  // ㅗ'30hello' (x)
+var x = 100 - '30';  // '30hello' (x)
 console.log(x);
