@@ -36,15 +36,27 @@
 
     <script>
         //1. 전체 요소의 font-size를 20px로 지정하세요.
+        const $wrap = document.querySelector('#wrap');
+        $wrap.style.fontSize = '20px';
 
         //2. h1요소의 폰트 색상을 red로 지정하세요.
-        // document.querySelector('h1').style.color = 'red';
+        document.querySelector('h1').style.color = 'red';
 
         //3. id가 firstTitle인 요소의 폰트 색상을 green으로 지정하세요.       
+        const $firstTitle = document.querySelector('#firstTitle')
+        $firstTitle.style.color = 'green';
 
         //4. 클래스가 nextTitle인 요소의 폰트 색상을 blue로 지정하세요.
+        const $nextTitle = document.querySelector('.nextTitle')
+        $nextTitle.style.color = 'blue';
+        
 
-        //5. 클래스 obj3의 자식요소 li요소 모두의 font-weight를 bold로 지정하세요.    
+        //5. 클래스 obj3의 자식요소 li요소 모두의 font-weight를 bold로 지정하세요.
+        const $obj3 = document.getElementsByClassName('obj3');
+        const $obj3Children = $obj3.getElementsByTagName('li');
+        // const $obj3Children = $obj3.children;
+        $obj3Children.style.fontWeight = 'bold';
+
 
         //6. 클래스 obj3의 요소 노드를 취득한 후 해당 요소 노드를 통해 
         //   클래스 theObj1을 취득한 뒤 폰트색상을 red로 지정하세요.          
