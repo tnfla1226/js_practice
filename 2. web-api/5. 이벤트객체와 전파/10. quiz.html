@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const rdNumber = Math.floor(Math.random() * 100);
+        let minNumber = 0;
+        let maxNumber = 100;
+        let tryCount = 6;
+        let answerCount = 0;
+
+        alert('[UP & DOWN 게임 - 1 ~ 100 사이의 숫자 중 어떤 숫자가 들어있을까요??]');
+
+        while (true) {
+
+            let number = +prompt(`숫자를 입력하세요! [${minNumber} ~ ${maxNumber}]`);
+
+            if (number < rdNumber) {
+                alert('UP!');
+                tryCount--;
+                answerCount++;
+                minNumber = number;
+                
+            }
+            else if (number === rdNumber) {
+                answerCount++;
+                alert(`정답입니다!! ${answerCount}번만에 맞히셨군요!`);
+                if (tryCount >= 0) {
+                    alert('YOU WIN!')
+                }
+                else {
+                    alert('YOU LOSE!')
+                }
+                break;
+                
+            }
+            else {
+                alert('DOWN!');
+                tryCount--;
+                answerCount++;
+                maxNumber = number;
+            }
+
+            if(tryCount === 0 ) {
+                alert('정답 기회 모두 소진! 계속 문제를 풀어주세요!');
+            }
+            else if (tryCount >= 0){
+                alert(`정답기회 ${tryCount}번 남았습니다!`);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
