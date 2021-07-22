@@ -105,7 +105,7 @@ function findIndexByDataId(dataId) {
 // 할 일 완료 처리
 function changeCheckState($label) {
     /*
-        1. 체크가 된 label태그에 checked클래스를 추가해애ㅑ 함.
+        1. 체크가 된 label태그에 checked클래스를 추가해야 함.
         2. 이 함수에는 체크가 된 label태그의 정보가 필요함.
         3. 이 label태그는 이벤트 핸들러가 알고 있음.
     */
@@ -153,12 +153,25 @@ function removeToDoData($delTarget) {
 // 할 일 수정 처리 함수
 function modifyToDoData($modifyTarget) {
 
-    const $text = document.querySelector('.text');
-    $text.innerHTML = '<input></input>';
-    $text.setAttribute('type', 'text');
-    $text.setAttribute('value', '$text.textContent.value');
-    $text.classList.relpace('mod-input');
+    $modifyTarget.removeChild($modifyTarget.lastElementChild);
+    const $new = document.createElement('input');
 
+    $modifyTarget.appendChild($new);
+    $modifyTarget.lastElementChild.setAttribute('type', 'text');
+    $modifyTarget.lastElementChild.classList.add('mod-input');
+
+    // const $modifiedText = document.querySelector('.mod-input');
+    // $modifiedText.setAttribute('value',);
+
+/*
+    const newToDo = {
+        id: makeNewId(),
+        text: $modifiedText.value,
+        done: false
+    };
+    todos.push(newToDo);
+    console.log(todos);
+*/    
 }
 
 
@@ -187,6 +200,30 @@ function modifyToDoData($modifyTarget) {
 
     });
 
+
+    $todoList.addEventListener('click', e => {
+
+        if(!e.target.matches('.remove span') && !e.target.matches('.modify span')) {
+            return;
+        }
+        // 할 일 삭제버튼 클릭 이벤트
+        else if (e.target.matches('.remove span')) {
+            // console.log('삭제 버튼 클릭됨!', e.target);
+            console.log(e.target.parentNode.parentNode);
+
+            removeToDoData(e.target.parentNode.parentNode);
+        }
+        // 할일 수정버튼 클릭 이벤트
+        else if (e.target.matches('.modify span')) {
+            // e.preventDefault();
+            
+            console.log(e.target.parentNode.previousElementSibling);
+
+            modifyToDoData(e.target.parentNode.previousElementSibling);
+        }
+    });
+
+    /*
     // 할 일 삭제버튼 클릭 이벤트
     $todoList.addEventListener('click', e => {
 
@@ -207,5 +244,6 @@ function modifyToDoData($modifyTarget) {
 
         modifyToDoData(e.target.parentNode.previousElementSibling.lastElementChild);
     });
+    */
 
 })();
