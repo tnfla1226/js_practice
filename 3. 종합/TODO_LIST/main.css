@@ -88,7 +88,6 @@ section.todo-template .content .todo-list .todo-list-item {
     display: flex;
     padding: 16px;
     align-items: center;
-    position: relative;
 }
 
 section.todo-template .content .todo-list .todo-list-item:nth-child(even) {
@@ -129,8 +128,17 @@ section.todo-template .content .todo-list .todo-list-item .remove {
     color: red;
 }
 
-section.todo-template .content .todo-list .todo-list-item .checkbox .mod-input {
-    border: 1px solid #000;
-    position: absolute;
-    left: 90px;
+section.todo-template .content .todo-list .todo-list-item .checkbox .modify-input {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-left: 54px;
+    font-size: 12px;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+section.todo-template .content .todo-list .todo-list-item .checkbox .modify-input:focus {
+    outline: #e20;
+    border: 1px solid #e20;
+    /* box-shadow: 0 0 10px #c20; */
 }
